@@ -4,22 +4,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="shortcut icon" href="./public/assets/images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./public/assets/css/bundle.css">
-  <title>Document</title>
+  <title>Photon</title>
 </head>
 
 <body>
   <header>
+    <video poster="./public/assets/images/image-poster.png" autoplay loop muted>
+      <source src="./public/assets/movies/bg-movie.mp4" type="video/mp4">
+    </video>
     <h1>
       <a href="./index.html" id="logo">Photon</a>
     </h1>
     <form>
-      <input type="text" autofocus placeholder="Montain, Space, City" name="search">
-      <button type="submit">Search</button>
+      <input type="text" required autofocus placeholder="Montain, Space, City" name="search">
+      <button type="submit"><i class="material-icons">search</i></button>
     </form>
   </header>
+  <nav>
+    <ul>
+      <li class="active"><a href="#">Photos</a></li>
+    </ul>
+  </nav>
   <main>
-    <article></article>
+    <article>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+    </article>
   </main>
   <script src="./public/assets/js/bundle.js"></script>
 </body>

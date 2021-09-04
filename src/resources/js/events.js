@@ -1,5 +1,6 @@
 const { searchInput, form, searchValue } = require("./globals");
-const { SearchPhotos, ClearPhotos } = require("./functions");
+const { SearchPhotos, ClearPhotos, GetNewPhotos } = require("./functions");
+const debounce = require('debounce');
 
 searchInput.addEventListener("change", (event) => {
   searchValue.pop();
@@ -9,4 +10,4 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   ClearPhotos();
   SearchPhotos(searchValue.join(""));
-})
+});

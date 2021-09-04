@@ -1,66 +1,195 @@
-@import url('https://fonts.googleapis.com/css?family=Archivo+Black|Roboto:400,500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600|Oswald:700&display=swap');
 *{
   padding: 0;
   margin: 0;
   outline: 0;
   box-sizing: border-box;
-  --color-theme1: #ff6347;
+  --color-theme1: #ff3647;
+}
+a{
+  text-decoration: none;
 }
 body{
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  scrollbar-width: thin;
   overflow-x: hidden;
 }
 header{
   display: flex;
   flex-direction: column;
-  min-height: 30vh;
+  width: 100vw;
+  height: 50vh;
   justify-content: center;
   align-items: center;
+  background-color: #00000085;
+  position: relative;
+  overflow: hidden;
 }
-header #logo{
+video{
+  position: absolute;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+}
+header a#logo{
   text-decoration: none;
-  color: #000000;
+  color: var(--color-theme1);
+  transition: all 500ms;
+}
+header a#logo:hover{
+  color: #ffffff;
 }
 header h1{
   text-align: center;
-  font-family: "Archivo Black", sans-serif;
-  font-size: 2rem;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
 }
 form{
-  padding: 3rem;
+  padding: 2.5rem;
   display: flex;
+  max-width: 600px;
+  width: 100%;
 }
 form input{
-  font-size: 2rem;
-  padding: 0.5rem;
+  font-family: "Montserrat";
+  font-size: 1.6rem;
+  padding: .7rem;
   width: 100%;
   border: none;
-  border: 2px solid var(--color-theme1);
   border-radius: .4rem 0rem 0rem .4rem;
+  box-shadow: 0px 5px 15px #00000045;
 }
 ::placeholder{
-  color: #c5c5c5;
+  color: #2e2e2e85;
 }
 form button{
   border: none;
-  padding: .5rem;
-  background: var(--color-theme1);
-  color: #ffffff;
+  padding: .6rem;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  color: #c5c5c5;
   font: normal 1.5rem "Roboto", sans-serif;
   cursor: pointer;
   border-radius: 0rem .4rem .4rem 0rem;
+  box-shadow: 0px 5px 15px #00000045;
+  transition: all 500ms;
+}
+form button:hover{
+  background: var(--color-theme1);
+  color: #ffffff;
+}
+nav{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #dddddd85;
+  background: #ffffff;
+}
+nav ul{
+  width: 80%;
+  margin: 0 auto;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav ul li{
+  margin: 1rem;
+  font: 600 1.4rem "Montserrat", serif;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+nav ul li::after{
+  content: "";
+  display: none;
+  width: 120%;
+  height: 3px;
+  border: 1rem;
+  background: var(--color-theme1);
+  position: absolute;
+  bottom: -18px;
+}
+nav ul li.active::after{
+  display: block;
+}
+nav ul li a{
+  color: #2e2e2e;
+  transition: all 300ms;
+}
+nav ul li a:hover{
+  color: var(--color-theme1);
 }
 article{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  width: 80%;
+  width: 95%;
   padding: 2rem 0rem;
-  row-gap: 5rem;
-  column-gap: 3rem;
-  margin: auto;
+  margin: 0 auto;
+  display: flex;
+}
+article section{
+  display: flex;
+  flex-direction: column;
+  flex-basis: 0;
+  flex-grow: 1;
+}
+figure{
+  position: relative;
+  margin: .5rem;
+  cursor: pointer;
 }
 figure img {
   width: 100%;
-  height: 600px;
   object-fit: cover;
+  border-radius: .4rem;
+}
+figure:hover figcaption{
+  display: block;
+  animation: fade-info 1s cubic-bezier(0.36, 0.6, 0, 1.06) forwards;
+}
+figure figcaption{
+  position: absolute;
+  bottom: 3px;
+  width: 0%;
+  background: #00000085;
+  backdrop-filter: blur(3px);
+  border-radius: .4rem;
+  font: 400 1.5rem "Montserrat", serif;
+  padding: .5rem;
+  display: none;
+  height: 0px;
+  overflow: hidden;
+}
+figure figcaption a{
+  color: #ffffff;
+  margin-top: 1rem;
+  display: block;
+  transition: color 300ms;
+}
+figure figcaption a:hover{
+  color: var(--color-theme1);
+}
+@keyframes fade-info{
+  50%, 100%{
+    width: 100%;
+    height: 0px;
+  }
+  100%{
+    font-size: 1.5rem;
+    height: 100px;
+  }
+}
+
+/* scroll-custom */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: var(--color-theme1);
 }
