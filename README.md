@@ -19,7 +19,7 @@ Criar um projeto de galeria de imagens usando a **Pexels API**
 ## Funcionalidades:
 - Listar imagens selecionadas do dia;
 - Exibr nome do fotógrafo responsável;
-- Busca por categoria de imagnes;
+- Busca por categoria de imagens;
 
 ## Executando o projeto: 🚀
 Para executar e visualizar o projeto em **modo de desenvolvimento**, você precisará seguir as próximas etapas.
